@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<main class="main-content main-background section-wrapper">
+  <div class="section-content-wide">
+    <div class="section-gap">
+      {% if subscriptions %}
+      <div class="options">
+        <a hx-get="{{ mo_url }}" hx-target="#pricing-container" hx-swap="outerHTML">
+          Monthly
+        </a>
+        <a hx-get="{{ yr_url }}" hx-target="#pricing-container" hx-swap="outerHTML">
+          Yearly
+        </a>
+      </div>
+
+      {% include "subscriptions/subscription_card.html" with subscriptions=subscriptions %}
+      {% else %}
+        {% include "partials/nothing.html" with extra='No memberships available!' %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</main>
+
+
+{% endblock %}

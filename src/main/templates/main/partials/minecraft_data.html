@@ -1,0 +1,24 @@
+{% load static %}
+<img src="{% static 'olipvp-icon.png' %}" alt="Server Image" />
+<div class="server-data-result">
+  <p>Server IP:
+    <span class="text-to-copy" onclick="copyToClipboard(this)">
+      {{ data.IP }} <i class="fa fa-copy" aria-hidden="true"></i>
+    </span>
+    <span id="copy-message" class="copy-notification"></span>
+  </p>
+  <p>Server Status:
+    {% if data.status %}
+      <span  class="server-status-online">Online</span>
+    {% else %}
+      <span class="server-status-offline">Offline</span>
+    {% endif %}
+  </p>
+  <p>Players Online:
+    {% if data.status %}
+      <span class="server-players">{{ data.players }}</span>
+    {% else %}
+      <span class="server-players">0</span>
+    {% endif %}
+  <p>Version: <span class="server-version">{{ data.version }}</span></p>
+</div>

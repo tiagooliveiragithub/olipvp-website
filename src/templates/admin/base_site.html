@@ -1,0 +1,31 @@
+{% extends "admin/base_site.html" %}
+
+{% load static %}
+
+{% block extrahead %}
+  {{ block.super }}
+  <link rel="icon" type="image/png" href="{% static 'olipvp-icon.png' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'admin/css/custom_admin.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto&display=swap" rel="stylesheet">
+{% endblock %}
+
+{% block title %}
+  {{ APP_NAME }} Dashboard 
+{% endblock %}
+
+{% block branding %}
+  <h1 id="site-name">
+    <a href="{% url 'admin:index' %}">
+      {{ APP_NAME }} Dashboard
+      {% if user.is_authenticated %}
+        <span class="username">({{ user.username }})</span>
+      {% endif %}
+    </a>
+  </h1>
+{% endblock %}
+
+{% block footer %}
+  <div class="footer-admin">
+    {% include "partials/footer.html" %}
+  </div>
+{% endblock %}

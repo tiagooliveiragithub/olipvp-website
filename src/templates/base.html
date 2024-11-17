@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'partials/head.html' %}
+<body>
+  <div class="website-wrapper">
+    {% include 'partials/header.html' %}
+    {% include 'partials/messages.html' with messages=messages %}
+    {% block content %}{% endblock %}
+  </div>
+  {% include 'partials/footer.html' %}
+  {% include 'partials/scripts.html' %}
+</body>
+</html>

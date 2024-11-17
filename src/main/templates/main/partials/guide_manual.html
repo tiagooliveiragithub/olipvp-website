@@ -1,0 +1,11 @@
+{% if guide %}
+  <div class="card-grid card_transition" id="manual-container">
+    <article class="card single-post-gap section-gap">
+        {{ guide.content | safe }}   
+    </article>
+  </div>
+{% else %}
+    <div id="manual-container">
+      {% include "partials/nothing.html" with extra="No guide available!" %}
+    </div>
+{% endif %}

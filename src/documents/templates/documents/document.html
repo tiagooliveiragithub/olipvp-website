@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="single-post-content section-content-narrow">
+    <div class="single-post-gap section-gap">
+        <div class="pb-base">
+            <h1>{{ document.name }}</h1>
+            <p>{{ document.content | safe }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<article class="card nothing-found">
+  <div class="card-text-wrapper">
+    {% if extra %}
+    <h1>{{ extra }}<span class="card-icon">😔</span></h1>
+    {% else %}
+    <h1>Nothing found!<span class="card-icon">😔</span></h1>
+    {% endif %}
+
+    <div class="mb-base"></div>
+    <p>
+      We couldn't find what you were looking for. Go back to the <a href="{% url 'home' %}">home page</a>.
+    </p>
+  </div>
+</article>

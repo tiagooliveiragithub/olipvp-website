@@ -1,0 +1,22 @@
+{% load static %}
+
+<footer class="footer section-wrapper">
+  <div class="section-content-wide">
+    <div class="footer-gap">
+      <div class="center">
+        Copyright © {% now "Y" %} <a href="{% url 'home' %}">{{ APP_NAME }}</a>
+      </div>
+      <div class="center">
+      <small>
+        {% for doc in documents %}
+          <a href="{{ doc.get_absolute_url }}" class="link">{{ doc.name }}</a>
+          {% if not forloop.last %} | {% endif %}
+        {% endfor %}
+      </small>
+      {% if user.is_authenticated and user.is_staff %}
+    <br><br><a href="{% url 'admin:index' %}">Access Dashboard (Staff Only)</a><br><br>
+    {% endif %}
+    </div>
+            
+  </div>
+</footer>

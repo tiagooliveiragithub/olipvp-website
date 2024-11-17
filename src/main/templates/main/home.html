@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% load static %}
+
+<main class="main-content main-background section-wrapper">
+  <div class="section-content-wide">
+    <div class="section-gap">
+      <h1>Welcome {% if user.is_authenticated %} {{ user.first_name }} {{ user.last_name }} {% endif %} to {{ APP_NAME }}</h1>
+      <p>
+        This a server that works on a ranking system. New privileges and features are unlocked as you rank up. 
+        Join us, play with friends, participate in events. Find server information and purchase memberships to enhance your experience. 
+        Join us and start your adventure today!  
+      </p>
+
+      <h2>Server</h2>
+      <div class="separator-main"></div>
+      <div class="server-data" id="minecraft-data-container" hx-get="{% url 'main:minecraft_data' %}" hx-trigger="load delay:2s" hx-swap="innerHTML">
+        <p class="">Loading servers data...</p>
+      </div>
+    </div>   
+  </div>
+</main>
+{% endblock content %}

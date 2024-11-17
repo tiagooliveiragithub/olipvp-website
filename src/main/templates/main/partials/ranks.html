@@ -1,0 +1,37 @@
+{% if ranks %}
+    
+    <div class="card-grid card_transition" id="manual-container">
+
+    {% for rank in ranks %}
+      <article class="card">
+        <div class="card-text-wrapper">
+          <div class="card-title-wrapper">
+            <h2 class="card-title">
+              <a href="{{ subscription.get_checkout_url }}">
+                <p style="color:{{ rank.color }};">
+                  <img class="card-icon" src="{{ rank.image.url }}" alt="{{ subscription.name }} Image" />
+                  {{ rank.name }}
+                </p>
+              </a>
+            </h2>
+          </div>
+
+          <p class="card-price">
+            Cost to rank up from previous rank: <strong>{{ rank.money }}</strong> coins
+          </p>
+          <ul class="card-features">
+            {% for feature in rank.display_features_list %}
+              <li>{{ feature }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </article>
+    {% endfor %}
+    
+  </div>
+{% else %}
+  <div id="manual-container">
+    {% include "partials/nothing.html" with extra="No ranks available!" %}
+  </div>
+{% endif %}
+
