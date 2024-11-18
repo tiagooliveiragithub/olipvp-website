@@ -6,7 +6,6 @@
 <main class="main-content main-background section-wrapper">
   <div class="section-content-wide">
     <div class="section-gap">
-
       <div class="options">
         <a hx-get="{% url 'main:guide_replacement' page=' ' %}" hx-target="#manual-container" hx-swap="outerHTML">
           Guide
@@ -15,7 +14,7 @@
           Ranks
         </a>
       </div>
-        {% include "main/partials/guide_manual.html" with guide=guide %}
+      {% include "main/partials/guide_manual.html" with guide=guide %}
     </div>
   </div>
 </main>
