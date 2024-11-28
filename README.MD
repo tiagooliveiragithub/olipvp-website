@@ -1,5 +1,3 @@
-## OliPvP Website
-
-### This code is available for view only. Redistribution, modification, and any other use is prohibited without explicit permission from the author.
-
+# Web Application with Django, HTMX, Stripe and Social Auth
 ![thumbnail-website](olipvp-thumbnail.jpg)
+
